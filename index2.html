@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Length Validator</title>
+</head>
+<body>
+  <h1 style="color:brown;">Enter a string (50 characters max)</h1>
+  <input type="text" id="inputField" placeholder="Type something here...">
+  <button onclick="validateInput()">Submit</button>
+
+  <script>
+    // This function will validate the input length
+    function validateInput() {
+      // Get the value entered by the user
+      var input = document.getElementById("inputField").value;
+
+      // Check if the input is longer than 50 characters
+      if (input.length > 50) {
+        // If it's too long, show an alert
+        alert("Input exceeds 50 characters! Please enter a shorter text.");
+      } else {
+        // Otherwise, display a success message (optional)
+        alert("Input is valid!");
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Current Time</title>
+</head>
+<body>
+
+  <h1>Click the button to see the current time</h1>
+
+  <!-- This is the button that triggers the display of the time -->
+  <!-- <button onclick="showCurrentTime()">Show Current Time</button> -->
+
+  <!-- This is where the time will be shown -->
+  <div id="timeDisplay"></div>
+
+  <script>
+    // This function shows the current time
+     function showCurrentTime() {
+
+      // Step 1: Get the current time
+        var currentTime = new Date();  // This gets the current date and time
+        const time = document.querySelector("#timeDisplay");
+      // Step 2: Get the hours, minutes, and seconds from the current time
+        var hours = currentTime.getHours();  // Get the current hour
+        var minutes = currentTime.getMinutes();  // Get the current minutes
+        var seconds = currentTime.getSeconds();  // Get the current seconds
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+        time.textContent = hours + ":" + minutes + ":" + seconds + " ";
+  }
+
+    showCurrentTime()
+
+    
+  </script>
+
+</body>
+</html>
